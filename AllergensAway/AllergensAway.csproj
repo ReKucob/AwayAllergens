@@ -144,6 +144,21 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Pictures\About us-education.jpg" />
+    <Content Include="Pictures\About us-meal plan.png" />
+    <Content Include="Pictures\About us-recipes.jpg" />
+    <Content Include="Pictures\homepage1.jpg" />
+    <Content Include="Pictures\homepage2.jpg" />
+    <Content Include="Pictures\homepage3.jpg" />
+    <Content Include="Pictures\homepage4.jpg" />
+    <Content Include="Pictures\homepage5.jpg" />
+    <Content Include="Pictures\homepage6.jpg" />
+    <Content Include="Pictures\icon-bread.jpg" />
+    <Content Include="Pictures\icon-cake.jpg" />
+    <Content Include="Pictures\icon-leaf.jpg" />
+    <Content Include="Pictures\icon-smile.jpg" />
+    <Content Include="Pictures\icon-tick.jpg" />
+    <Content Include="Pictures\icon-timer.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -173,6 +188,8 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\App_LocalResources\" />
+    <Folder Include="App_Data\Picture\App_LocalResources\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
