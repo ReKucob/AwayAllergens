@@ -1,0 +1,236 @@
+﻿@model IEnumerable<Search_Recipes.Models.Recipe>
+
+@{
+    Layout = null;
+}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="Food Recipes; charset=utf-8" />
+    <meta name="author" content="Obtanica" />
+    <meta name="description" content="Meal Plan">
+    <!-- Document title -->
+    <title>Daily-free | Allergens Away</title>
+    <!-- Stylesheets & Fonts -->
+    <link href="~/searchPageTemplate/css/plugins.css" rel="stylesheet">
+    <link href="~/searchPageTemplate/css/style.css" rel="stylesheet">
+    <link href="~/searchPageTemplate/css/responsive.css" rel="stylesheet">
+
+</head>
+
+<body class="container-fluid">
+
+    <div class="body-inner">
+
+        <header id="header" style="margin-top:30px" data-transparent="true" data-fullwidth="true" class="dark">
+            <div class="header-inner">
+                <div class="container-fluid">
+                    <!--Logo-->
+                    <div id="logo">
+                        <a href="https://obtanicallergensaway.tk" class="logo">
+                            <img src="~/Pictures/App-icon-horizon.png" style="margin-left:50px" />
+                        </a>
+                    </div>
+                    <!--End: Logo-->
+                    <!--Navigation Resposnive Trigger-->
+                    <div id="mainMenu-trigger">
+                        <button class="lines-button x"> <span class="lines"></span> </button>
+                    </div>
+                    <!--end: Navigation Resposnive Trigger-->
+                    <!--Navigation-->
+                    <div id="mainMenu">
+                        <div class="container-fluid">
+                            <nav>
+                                <ul>
+                                    <li><a href="https://obtanicallergensaway.tk" style="font-size:16px;font-family:'Mongolian',sans-serif;padding:12px 25px;color:white">Home</a></li>
+                                    <li><a href="https://obtanicallergensaway.tk/education-of-allergy/" style="font-size:16px;font-family:'Mongolian',sans-serif;padding:12px 25px;color:white">For Kids</a></li>
+                                    <li><a href="https://searchobtanicallergnsaway.azurewebsites.net" style="font-size:16px;font-family:'Mongolian',sans-serif;padding:12px 25px;color:white">Find Recipes</a></li>
+                                    <li><a href="https://obtanicallergensaway.tk/allergy-centres/" style="font-size:16px;font-family:'Mongolian',sans-serif;padding:12px 25px;color:white">Allergy Center</a></li>
+                                    <li><a href="https://obtanicallergensaway.tk/contact/" style="font-size:16px;font-family:'Mongolian',sans-serif;padding:12px 25px;color:white">About Us</a></li>
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!--END: NAVIGATION-->
+                </div>
+            </div>
+        </header>
+
+        <!-- Page title -->
+        <section id="page-title"
+                 style="background-image: url('../../Pictures/ChildrenMP.jpg');background-size:cover">
+            <div class="container">
+                <div class="page-title" style="margin-top:130px">
+                    <div class="container-fluid animated fadeInDown visible" data-animate="fadeInDown" data-animate-delay="1200">
+                        <p style="font-family:'Times New Roman', Times, serif; font-size:100px;color:orangered"> Meal Plan: Desserts</p>
+                    </div>
+                    <div style="margin-top:200px" />
+                </div>
+            </div>
+        </section>
+
+
+        <!-- end: Page title -->
+        <div class="container">
+            <nav class="grid-filter gf-outline" data-layout="#portfolio" style="margin-top:100px">
+                <ul>
+                    <li>@Html.ActionLink("Choiceness", "Index", "ChildrenMP")</li>
+                    <li  class="active">@Html.ActionLink("Gluten-free", "Glutenfree", "ChildrenMP")</li>
+                    <li>@Html.ActionLink("Dairy-free", "Dairyfree", "ChildrenMP")</li>
+                    <li>@Html.ActionLink("Peanut-free", "Peanutfree", "ChildrenMP")</li>
+                    <li>@Html.ActionLink("Soy-free", "Soyfree", "ChildrenMP")</li>
+                    <li>@Html.ActionLink("Tree Nut-free", "TreeNutfree", "ChildrenMP")</li>
+                </ul>
+                <div class="grid-active-title">Gluten-free</div>
+            </nav>
+
+            <hr />
+
+            <div class="row">
+                <div class="col-lg-9">
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <input type="button" class="btn btn-outline" value="Download this Plan" onclick="location.href='@Url.Action("Download","ChildrenMP",new { keyword = "Gluten" })'" />
+                </div>
+            </div>
+        </div>
+
+        <section id="page-content">
+            <div class="container">
+                <!-- Gallery -->
+                <div id="blog" class="post-3-columns">
+
+                    <div class="post-item border">
+                        <div class="post-item-wrap">
+                            <div class="post-image">
+                                <a href="~/ChildrenMP/Details/724">
+
+                                    <img src="~/Pictures/recipePics/soup1.png" />
+                                </a>
+
+                            </div>
+                            <div class="post-item-description">
+                                <h2>
+                                    <a href="~/ChildrenMP/Details/724">
+                                        Chestnut-Armagnac Soufflé with Bittersweet Chocolate Sauce
+                                    </a>
+                                </h2>
+                                <p>
+                                    A big, beautiful soufflé with a festive chestnut flavor. Youll need to bake the dessert right before serving, but you can make the soufflé base (minus the egg whites) two hours ahead, then fold in the whites up to one hour before baking.
+                                </p>
+                                <a href="~/ChildrenMP/Details/724" class="item-link">Read More <i class="fa-angle-right"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-item border">
+                        <div class="post-item-wrap">
+                            <div class="post-image">
+                                <a href="~/ChildrenMP/Details/507">
+
+                                    <img src="~/Pictures/recipePics/cake1.png" />
+                                </a>
+                                <span class="post-meta-category" style="background-color:Red"><a href="~/ChildrenMP/Details/507">high Rating</a></span>
+                            </div>
+                            <div class="post-item-description">
+                                <h2>
+                                    <a href="~/ChildrenMP/Details/507">
+                                        Warm Sweet-Potato Pudding with Apples and Chestnuts
+                                    </a>
+                                </h2>
+                                <p>Think of the best sweet-potato pie you've ever eaten and then take away the crust so you can revel solely in its silky goodness. A bite of this pudding is full and round, with hits of chestnut and dried fruit.</p>
+
+                                <a href="~/ChildrenMP/Details/507" class="item-link">Read More <i class="fa-angle-right"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post-item border">
+                        <div class="post-item-wrap">
+                            <div class="post-image">
+                                <a href="~/ChildrenMP/Details/500">
+
+                                    <img src="~/Pictures/recipePics/ice cream2.png" />
+                                </a>
+                                <span class="post-meta-category" style="background-color:Red"><a href="~/ChildrenMP/Details/500">high Rating</a></span>
+                            </div>
+                            <div class="post-item-description">
+                                <h2>
+                                    <a href="~/ChildrenMP/Details/500">
+                                        Grilled Peaches with Black Pepper and Basil-Lime Syrup
+                                    </a>
+                                </h2>
+                                <p>
+                                    The black pepper adds a surprising aromatic and spicy flavor to the sweet grilled peaches. The recipe here makes more syrup than you'll likely need but it will keep in the refrigerator for at least 1 week and is great in a cocktail or with sparkling water.
+                                </p>
+
+                                <a href="~/ChildrenMP/Details/500" class="item-link">Read More <i class="fa-angle-right"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="post-item border">
+                        <div class="post-item-wrap">
+                            <div class="post-image">
+                                <a href="~/ChildrenMP/Details/689">
+
+                                    <img src="~/Pictures/recipePics/cake1.png" />
+                                </a>
+
+                            </div>
+                            <div class="post-item-description">
+                                <h2>
+                                    <a href="~/ChildrenMP/Details/689">
+                                        Corn Cakes Topped with Goat Cheese and Bacon
+                                    </a>
+                                </h2>
+                                <p>
+                                    The heartland is known for its grains and its pork; this first course features two of the region's best products—corn and bacon.
+                                </p>
+                                <a href="~/ChildrenMP/Details/689" class="item-link">Read More <i class="fa-angle-right"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end: Gallery -->
+
+
+
+            </div>
+        </section>
+
+
+
+
+        <footer id="footer">
+            <div class="footer-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+
+                            <img src="~/Pictures/App-icon-horizon.png" />
+                        </div> <div class="col-lg-7">
+                            <p>
+                                Allergens Away by A26 Obtanica is built around helping those suffering from food allergies.
+                                We’re your companion in preparing food for yourselves and those you care about.
+                                Resources for parents who want to teach their kids about food allergies are available here too.
+                            </p>
+                            <br />
+                            <p>
+                                Made with ❤️ in Melbourne, Australia.
+                            </p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>

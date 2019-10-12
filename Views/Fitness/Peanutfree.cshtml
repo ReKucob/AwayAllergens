@@ -1,0 +1,380 @@
+﻿@model IEnumerable<Search_Recipes.Models.Recipe>
+
+@{
+    Layout = null;
+}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="Food Recipes; charset=utf-8" />
+    <meta name="author" content="Obtanica" />
+    <meta name="description" content="Meal Plan">
+    <!-- Document title -->
+    <title>Meal Plan | Allergens Away</title>
+    <!-- Stylesheets & Fonts -->
+    <link href="~/searchPageTemplate/css/plugins.css" rel="stylesheet">
+    <link href="~/searchPageTemplate/css/style.css" rel="stylesheet">
+    <link href="~/searchPageTemplate/css/responsive.css" rel="stylesheet">
+
+</head>
+
+<body class="container-fluid">
+
+    <div class="body-inner">
+
+        <header id="header" style="margin-top:30px" data-transparent="true" data-fullwidth="true" class="dark">
+            <div class="header-inner">
+                <div class="container-fluid">
+                    <!--Logo-->
+                    <div id="logo">
+                        <a href="https://obtanicallergensaway.tk" class="logo">
+                            <img src="~/Pictures/App-icon-horizon.png" style="margin-left:50px" />
+                        </a>
+                    </div>
+                    <!--End: Logo-->
+                    <!--Navigation Resposnive Trigger-->
+                    <div id="mainMenu-trigger">
+                        <button class="lines-button x"> <span class="lines"></span> </button>
+                    </div>
+                    <!--end: Navigation Resposnive Trigger-->
+                    <!--Navigation-->
+                    <div id="mainMenu">
+                        <div class="container-fluid">
+                            <nav>
+                                <ul>
+                                    <li><a href="https://obtanicallergensaway.tk" style="font-size:16px;font-family:'Mongolian',sans-serif;padding:12px 25px;color:white">Home</a></li>
+                                    <li><a href="https://obtanicallergensaway.tk/education-of-allergy/" style="font-size:16px;font-family:'Mongolian',sans-serif;padding:12px 25px;color:white">For Kids</a></li>
+                                    <li><a href="https://searchobtanicallergnsaway.azurewebsites.net" style="font-size:16px;font-family:'Mongolian',sans-serif;padding:12px 25px;color:white">Find Recipes</a></li>
+
+                                    <li><a href="https://obtanicallergensaway.tk/allergy-centres/" style="font-size:16px;font-family:'Mongolian',sans-serif;padding:12px 25px;color:white">Allergy Center</a></li>
+                                    <li><a href="https://obtanicallergensaway.tk/contact/" style="font-size:16px;font-family:'Mongolian',sans-serif;padding:12px 25px;color:white">About Us</a></li>
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!--END: NAVIGATION-->
+                </div>
+            </div>
+        </header>
+
+        <!-- Page title -->
+        <section id="page-title"
+                 style="background-image: url('../../Pictures/fitnessMP.jpg');background-size:cover">
+            <div class="container">
+                <div class="page-title" style="margin-top:200px">
+                    <div class="container-fluid animated fadeInDown visible" data-animate="fadeInDown" data-animate-delay="1200">
+                        <p style="font-family:'Times New Roman', Times, serif; font-size:100px;color:black"> Meal Plan: Fitness</p>
+                    </div>
+                    <div style="margin-top:200px" />
+                </div>
+            </div>
+        </section>
+        <!-- end: Page title -->
+        <div class="container">
+        <nav class="grid-filter gf-outline" data-layout="#portfolio" style="margin-top:100px">
+            <ul>
+                <li>@Html.ActionLink("Choiceness", "Index", "Fitness")</li>
+                <li>@Html.ActionLink("Gluten-free", "Glutenfree", "Fitness")</li>
+                <li>@Html.ActionLink("Dairy-free", "Dairyfree", "Fitness")</li>
+                <li class="active">@Html.ActionLink("Peanut-free", "Peanutfree", "Fitness")</li>
+                <li>@Html.ActionLink("Soy-free", "Soyfree", "Fitness")</li>
+                <li>@Html.ActionLink("Tree Nut-free", "TreeNutfree", "Fitness")</li>
+            </ul>
+            <div class="grid-active-title">Peanut-free</div>
+        </nav>
+        <hr />
+
+        <div class="row">
+            <div class="col-lg-9">
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                <input type="button" class="btn btn-outline" value="Download this Plan" onclick="location.href='@Url.Action("Download","Fitness",new { keyword = "Peanut" })'" />
+            </div>
+        </div>
+
+</div>
+
+        <section id="page-content">
+            <div class="container">
+                <!-- Gallery -->
+                <div class="post-3-columns">
+                    <div class="blockquote">
+                        <p>
+                            breakfast
+                        </p>
+                    </div>
+                    <div class="post-item border">
+                        <div class="post-item-wrap">
+                            <div class="post-image">
+                                <a href="~/Fitness/Details/2346">
+
+                                    <img src="~/Pictures/recipePics/cake1.png" />
+                                </a>
+                                <span class="post-meta-category" style="background-color:orangered"><a href="~/Fitness/Details/2346">High Rating</a></span>
+                            </div>
+                            <div class="post-item-description">
+                                <h2>
+                                    <a href="~/Fitness/Details/2346">
+                                        Cherry-Apricot Yogurt Sundaes
+                                    </a>
+                                </h2>
+                                <p>
+                                    Though you could certainly use regular red cherries in this recipe, we prefer yellow cherries such as Royal Ann or Rainier, available in supermarkets, for their lovely yellow color, as well as their bright flavor and mild sweetness.
+                                </p>
+
+                                <a href="~/Fitness/Details/2346" class="item-link">Read More <i class="fa-angle-right"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-item border">
+                        <div class="post-item-wrap">
+                            <div class="post-image">
+                                <a href="~/Fitness/Details/10269">
+
+                                    <img src="~/Pictures/recipePics/cake1.png" />
+                                </a>
+                                <span class="post-meta-category" style="background-color:orangered"><a href="~/Fitness/Details/10269">High Rating</a></span>
+                            </div>
+                            <div class="post-item-description">
+                                <h2>
+                                    <a href="~/Fitness/Details/10269">
+                                        Raspberry Chocolate-Chip Pancakes
+                                    </a>
+                                </h2>
+                                <p>
+                                    Can be prepared in 45 minutes or less.
+                                </p>
+
+                                <a href="~/Fitness/Details/10269" class="item-link">Read More <i class="fa-angle-right"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-item border">
+                        <div class="post-item-wrap">
+                            <div class="post-image">
+                                <a href="~/Fitness/Details/7017">
+
+                                    <img src="~/Pictures/recipePics/soup1.png" />
+                                </a>
+                                <span class="post-meta-category" style="background-color:orangered"><a href="~/Fitness/Details/7017">High Rating</a></span>
+
+                            </div>
+                            <div class="post-item-description">
+                                <h2>
+                                    <a href="~/Fitness/Details/7017">
+                                        Paleo Granola With Coconut and Almonds
+                                    </a>
+                                </h2>
+                                <p>
+                                    Whether you're following a grain-free diet or not, this coconut, almond, and mixed seed "granola" is so good you'll never miss the oats
+                                </p>
+
+                                <a href="~/Fitness/Details/7017" class="item-link">Read More <i class="fa-angle-right"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <br />
+                    <div class="blockquote">
+                        <p>
+                            lunch
+                        </p>
+                    </div>
+                    <div class="post-item border">
+                        <div class="post-item-wrap">
+                            <div class="post-image">
+                                <a href="~/Fitness/Details/3538">
+
+                                    <img src="~/Pictures/recipePics/ice cream2.png" />
+                                </a>
+                                <span class="post-meta-category" style="background-color:orangered"><a href="~/Fitness/Details/3538">High Rating</a></span>
+                            </div>
+                            <div class="post-item-description">
+                                <h2>
+                                    <a href="~/Fitness/Details/3538">
+                                        Pumpkin Bread
+                                    </a>
+                                </h2>
+                                <p>
+                                    Editor's note: Use this recipe to make Bobby Flay's Pumpkin Bread Pudding .
+                                </p>
+
+                                <a href="~/Fitness/Details/3538" class="item-link">Read More <i class="fa-angle-right"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-item border">
+                        <div class="post-item-wrap">
+                            <div class="post-image">
+                                <a href="~/Fitness/Details/7291">
+
+                                    <img src="~/Pictures/recipePics/beef pie1.jpg" />
+                                </a>
+                                <span class="post-meta-category" style="background-color:orangered"><a href="~/Fitness/Details/7291">High Rating</a></span>
+                            </div>
+                            <div class="post-item-description">
+                                <h2>
+                                    <a href="~/Fitness/Details/7291">
+                                        Cracked Farro and Broccoli Salad
+                                    </a>
+                                </h2>
+                                <p>
+                                    Charlotte Fekete of Athens, Georgia writes: "I'm a junior in college, and I'm planning to go to cooking school after graduation. I've already had some experience decorating cakes and working for a caterer, but it was my mom who taught me how to cook. I've also learned a lot from reading magazines and cookbooks."Serve on its own for breakfast or with a scoop of sorbet or ice cream for dessert.
+                                </p>
+
+                                <a href="~/Fitness/Details/7291" class="item-link">Read More <i class="fa-angle-right"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-item border">
+                        <div class="post-item-wrap">
+                            <div class="post-image">
+                                <a href="~/Fitness/Details/6554">
+
+                                    <img src="~/Pictures/recipePics/ice cream2.png" />
+                                </a>
+                               
+                            </div>
+                            <div class="post-item-description">
+                                <h2>
+                                    <a href="~/Fitness/Details/6554">
+                                        Pink Grapefruit, Grape, Raspberry, and Olive Oil Salad with Minted Yogurt
+                                    </a>
+                                </h2>
+                                <p>
+                                    Olive oil in a dessert might seem a little odd, but try to think of it as a flavorful ingredient rather than a fat...as long as you choose a delicious extra-virgin oil. I first had something like this in Jabugo, Spain, when I ate slices of orange simply drizzled with a grassy local oil as a dessert. It was a revelation. If you want to go dairy-free in this dessert, then skip the yogurt and mix the mint in with the grapes.
+                                </p>
+
+                                <a href="~/Fitness/Details/6554" class="item-link">Read More <i class="fa-angle-right"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <br />
+                    <div class="blockquote">
+                        <p>
+                            dinner
+                        </p>
+                    </div>
+  <div class="post-item border">
+    <div class="post-item-wrap">
+        <div class="post-image">
+            <a href="~/Fitness/Details/7978">
+
+                <img src="~/Pictures/recipePics/beef pie1.jpg" />
+            </a>
+            <span class="post-meta-category" style="background-color:orangered"><a href="~/Fitness/Details/7978">High Rating</a></span>
+            <div class="post-item-description">
+                <h2>
+                    <a href="~/Fitness/Details/7978">
+                        Watercress Salad with Warm Mustard Dressing
+                    </a>
+                </h2>
+                <p>
+                    Light, creamy, warm, and slightly-sweet egg-based dressing is the perfect companion to zesty watercress. This is adapted from a recipe in "Valentine Dinner for Two" from the February 1977 issue of Glamour magazine, which we updated for our 2016 Epi Valentine's Menu.
+                </p>
+
+                <a href="~/Fitness/Details/7978" class="item-link">Read More <i class="fa-angle-right"></i></a>
+
+            </div>
+        </div>
+
+    </div>
+  </div>
+                    
+      <div class="post-item border">
+        <div class="post-item-wrap">
+            <div class="post-image">
+                <a href="~/Fitness/Details/5978">
+
+                    <img src="~/Pictures/recipePics/steak 1.png" />
+                </a>
+            </div>
+            <div class="post-item-description">
+                <h2>
+                    <a href="~/Fitness/Details/5978">
+                        Citrus-Stuffed Branzini
+                    </a>
+                </h2>
+                <p>
+                    This dish is one of my favorites for the grill. If a fish comes whole from the store, leave the head and tail on when you cook it, to help retain moisture. The fish is done when the inside of the stomach is dry.
+                </p>
+
+                <a href="~/Fitness/Details/5978" class="item-link">Read More <i class="fa-angle-right"></i></a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="post-item border">
+    <div class="post-item-wrap">
+        <div class="post-image">
+            <a href="~/Fitness/Details/3700">
+
+                <img src="~/Pictures/recipePics/seafood2.png" />
+            </a>
+            <span class="post-meta-category" style="background-color:orangered"><a href="~/Fitness/Details/3700">High Rating</a></span>
+        </div>
+        <div class="post-item-description">
+            <h2>
+                <a href="~/Fitness/Details/3700">
+                    Broiled Salmon with Citrus Yogurt Sauce
+                </a>
+            </h2>
+            <p>
+                This recipe serves 4 as a main course after you set aside one third of the fish (see cooks' note, below) to make the capellini with salmon and lemon-dill-vodka sauce. Otherwise, it serves 6.
+
+
+            </p>
+
+            <a href="~/Fitness/Details/3700" class="item-link">Read More <i class="fa-angle-right"></i></a>
+
+        </div>
+    </div>
+</div>
+                 </div>
+
+                <!-- end: Gallery -->
+
+
+                    
+            </div>
+        </section>
+
+
+
+
+        <footer id="footer">
+            <div class="footer-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+
+                            <img src="~/Pictures/App-icon-horizon.png" />
+                        </div> <div class="col-lg-7">
+                            <p>
+                                Allergens Away by A26 Obtanica is built around helping those suffering from food allergies.
+                                We’re your companion in preparing food for yourselves and those you care about.
+                                Resources for parents who want to teach their kids about food allergies are available here too.
+                            </p>
+                            <br />
+                            <p>
+                                Made with ❤️ in Melbourne, Australia.
+                            </p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        </div>
+</body>
