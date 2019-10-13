@@ -4,19 +4,20 @@
     Layout = null;
 }
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="content-type" content="Food Recipes; charset=utf-8" />
-    <meta name="author" content="Obtanica" />
-    <meta name="description" content="Recipes finder">
-    <!-- Document title -->
-    <title>Find Recipes | Allergens Away</title>
-    <!-- Stylesheets & Fonts -->
-    <link href="~/searchPageTemplate/css/plugins.css" rel="stylesheet">
-    <link href="~/searchPageTemplate/css/style.css" rel="stylesheet">
-    <link href="~/searchPageTemplate/css/responsive.css" rel="stylesheet">
-    <link href='~/searchPageTemplate/js/plugins/components/datatables/datatables.min.css' rel='stylesheet' />
-</head>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="content-type" content="Food Recipes; charset=utf-8" />
+        <meta name="author" content="Obtanica" />
+        <meta name="description" content="Recipes finder">
+        <!-- Document title -->
+        <title>Find Recipes | Allergens Away</title>
+        <!-- Stylesheets & Fonts -->
+        <link href="~/searchPageTemplate/css/plugins.css" rel="stylesheet">
+        <link href="~/searchPageTemplate/css/style.css" rel="stylesheet">
+        <link href="~/searchPageTemplate/css/responsive.css" rel="stylesheet">
+        <link href='~/searchPageTemplate/js/plugins/components/datatables/datatables.min.css' rel='stylesheet' />
+        
+    </head>
 
 <body class="container-fluid">
     <!-- Body Inner -->
@@ -79,8 +80,17 @@
                 border-left: none;
                 border-color: white;
                 color: black;
-                line-height:inherit;
-                }
+                line-height: inherit;
+            }
+
+            .divs .imgs {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .divs .infos {
+                display: inline-block;
+            }
         </style>
 
         <!-- Header -->
@@ -106,7 +116,7 @@
                                 <ul>
                                     <li><a href="https://obtanicallergensaway.tk" style="font-size:16px;font-family:'Mongolian',sans-serif;padding:12px 25px;color:black">Home</a></li>
                                     <li><a href="https://obtanicallergensaway.tk/education-of-allergy/" style="font-size:16px;font-family:'Mongolian',sans-serif;padding:12px 25px;color:black">For Kids</a></li>
-                                    <li><a href="https://searchobtanicallergnsaway.azurewebsites.net"style="font-size:16px;font-family:'Mongolian',sans-serif;padding:12px 25px;color:black">Find Recipes</a></li>
+                                    <li><a href="https://searchobtanicallergnsaway.azurewebsites.net" style="font-size:16px;font-family:'Mongolian',sans-serif;padding:12px 25px;color:black">Find Recipes</a></li>
                                     <li><a href="https://obtanicallergensaway.tk/allergy-centres/" style="font-size:16px;font-family:'Mongolian',sans-serif;padding:12px 25px;color:black">Allergy Center</a></li>
                                     <li><a href="https://obtanicallergensaway.tk/contact/" style="font-size:16px;font-family:'Mongolian',sans-serif;padding:12px 25px;color:black">About Us</a></li>
 
@@ -124,95 +134,143 @@
             <div class="container-fluid animated fadeInDown visible" data-animate="fadeInDown" data-animate-delay="1200">
                 <div class="page-title" style="margin-top:50px">
                     <h1> Explore 8,000+ Allergy-free Recipes</h1>
-                
-                @using (Html.BeginForm("Index", "Recipes", FormMethod.Get))
-                {
-                    <div class="row" style="margin-top:70px; color:white">
-                        <div class="col-lg-2 col-md-2">
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-xs-12">
-                            @Html.TextBox("SearchString", null, new { @class = "searchbar", placeholder = "Ingredients Including..." })
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-md-offset-2 col-sm-12 col-xs-12">
-                            @Html.TextBox("exFood", null, new { @class = "excludedbar", placeholder = "Ingredients Remove..." })
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-                            <input class="searchbutton" type="submit" value="Search" />
-                        </div>
-                    </div>
-                    <div class="row" style="text-align:center;margin-top:10px">
-                        <div class="col-lg-2 col-md-2">
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-                            @Html.DropDownList("mealContent", new List<SelectListItem>{
-                                              new SelectListItem{Text="Appetizer", Value="apperizer"},
-                                              new SelectListItem{Text="Breakfast", Value="breakfast"},
-                                              new SelectListItem{Text="Lunch", Value="lunch"},
-                                              new SelectListItem{Text="Dinner", Value="dinner"},
-                                              new SelectListItem{Text="Cocktail", Value="cocktail"},
-                                              new SelectListItem{Text="Brunch", Value="brunch"},
-                                              new SelectListItem{Text="Snack", Value="snack"},
-                                              new SelectListItem{Text="Dessert", Value="dessert"},
-                           }
-                                             , " - Meal Type - ", new { @class = "dropdown" }
-                           )
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-                            @Html.DropDownList("meatContent", new List<SelectListItem>{
-                                              new SelectListItem{Text="Chicken", Value="chicken"},
-                                              new SelectListItem{Text="Beef", Value="beef"},
-                                              new SelectListItem{Text="Lamb", Value="lamb"},
-                                              new SelectListItem{Text="Pork", Value="pork"},
-                                              new SelectListItem{Text="Fish", Value="fish"},
-                                              new SelectListItem{Text="Vegetarain", Value="vegetarain"},
-                           }
-                                             , " - Meat Type - ", new { @class = "dropdown" }
-                           )
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-                            @Html.DropDownList("allergensFree", new List<SelectListItem>{
-                                              new SelectListItem{Text="Wheat/gluten-free", Value="wheat/gluten-free"},
-                                              new SelectListItem{Text="Dairy-free", Value="dairy free"},
-                                              new SelectListItem{Text="Peanut-free", Value="peanut free"},
-                                              new SelectListItem{Text="Soy-free", Value="soy free"},
-                                              new SelectListItem{Text="Tree-nut-free", Value="tree nut free"},
 
-                       }
-                                             , " - Remove Allergens - ", new { @class = "dropdown" }
-                           )
+                    @using (Html.BeginForm("Index", "Recipes", FormMethod.Get))
+                    {
+                        <div class="row" style="margin-top:70px; color:white">
+                            <div class="col-lg-2 col-md-2">
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-xs-12">
+                                @Html.TextBox("SearchString", null, new { @class = "searchbar", placeholder = "Ingredients Including..." })
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-md-offset-2 col-sm-12 col-xs-12">
+                                @Html.TextBox("exFood", null, new { @class = "excludedbar", placeholder = "Ingredients Remove..." })
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                <input class="searchbutton" type="submit" value="Search" />
+                            </div>
                         </div>
-                        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-                            @Html.DropDownList("cookStyle", new List<SelectListItem>{
-                                              new SelectListItem{Text="Fry", Value="fry"},
-                                              new SelectListItem{Text="Grill", Value="grill"},
-                                              new SelectListItem{Text="Barbecue", Value="barbecue"},
-                                              new SelectListItem{Text="Bake", Value="bake"},
-                                              new SelectListItem{Text="Steam", Value="steam"},
-                                              new SelectListItem{Text="Roast", Value="roast"},
+                        <div class="row" style="text-align:center;margin-top:10px">
+                            <div class="col-lg-2 col-md-2">
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                @Html.DropDownList("mealContent", new List<SelectListItem>{
+                                                  new SelectListItem{Text="Appetizer", Value="apperizer"},
+                                                  new SelectListItem{Text="Breakfast", Value="breakfast"},
+                                                  new SelectListItem{Text="Lunch", Value="lunch"},
+                                                  new SelectListItem{Text="Dinner", Value="dinner"},
+                                                  new SelectListItem{Text="Cocktail", Value="cocktail"},
+                                                  new SelectListItem{Text="Brunch", Value="brunch"},
+                                                  new SelectListItem{Text="Snack", Value="snack"},
+                                                  new SelectListItem{Text="Dessert", Value="dessert"},
+                               }
+                                                 , " - Meal Type - ", new { @class = "dropdown" }
+                               )
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                @Html.DropDownList("meatContent", new List<SelectListItem>{
+                                                  new SelectListItem{Text="Chicken", Value="chicken"},
+                                                  new SelectListItem{Text="Beef", Value="beef"},
+                                                  new SelectListItem{Text="Lamb", Value="lamb"},
+                                                  new SelectListItem{Text="Pork", Value="pork"},
+                                                  new SelectListItem{Text="Fish", Value="fish"},
+                                                  new SelectListItem{Text="Vegetarain", Value="vegetarain"},
+                               }
+                                                 , " - Meat Type - ", new { @class = "dropdown" }
+                               )
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                @Html.DropDownList("allergensFree", new List<SelectListItem>{
+                                                  new SelectListItem{Text="Wheat/gluten-free", Value="wheat/gluten-free"},
+                                                  new SelectListItem{Text="Dairy-free", Value="dairy free"},
+                                                  new SelectListItem{Text="Peanut-free", Value="peanut free"},
+                                                  new SelectListItem{Text="Soy-free", Value="soy free"},
+                                                  new SelectListItem{Text="Tree-nut-free", Value="tree nut free"},
+
                            }
-                                             , " - Cooking Style - ", new { @class = "dropdown" }
-                           )
+                                                 , " - Remove Allergens - ", new { @class = "dropdown" }
+                               )
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                @Html.DropDownList("cookStyle", new List<SelectListItem>{
+                                                  new SelectListItem{Text="Fry", Value="fry"},
+                                                  new SelectListItem{Text="Grill", Value="grill"},
+                                                  new SelectListItem{Text="Barbecue", Value="barbecue"},
+                                                  new SelectListItem{Text="Bake", Value="bake"},
+                                                  new SelectListItem{Text="Steam", Value="steam"},
+                                                  new SelectListItem{Text="Roast", Value="roast"},
+                               }
+                                                 , " - Cooking Style - ", new { @class = "dropdown" }
+                               )
+                            </div>
+
+
                         </div>
-
-
-                    </div>
-                }
-            </div>
+                    }
+                </div>
             </div>
         </section>
         <!-- end: Page title -->
         <!-- Content -->
 
-        <section id="page-content">            
-              
-              
+        <section id="page-content">
+            <div class="row">
+                <div class="col-lg-1 col-md-1 col-sm-1">
+                </div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-12">
+                    <h3>Meal Plan Collection</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1 col-md-1">
+                </div>
+                <div class="card col-lg-3 col-md-3 col-sm-6 col-xs-12" style="height:120px">
+                    <div class="divs">
+                        <a href="~/Fitness">
+                            <div class="imgs">
+                                <img src="~/Pictures/mealplan1.png" style="width:100px;height:100px" />
+                            </div>
+                            <div class="infos">
+
+                                <div class="card-body">
+                                    <h5 class="post-thumbnail-conten">Fitness Collection</h5>
+                                    <p class="card-text">
+                                        Updated: 13/10/2019
+                                    </p>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card col-lg-3 col-md-3 col-sm-6 col-xs-12" style="height:120px">
+                    <div class="divs">
+                        <a href="~/ChildrenMP">
+                            <div class="imgs">
+                                <img src="~/Pictures/mealplan2.png" style="width:100px;height:100px" />
+                            </div>
+                            <div class="infos">
+
+                                <div class="card-body">
+                                    <h5 class="post-thumbnail-conten">Dessert Collection</h5>
+                                    <p class="card-text">
+                                        Updated: 10/10/2019
+                                    </p>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
             <br />
             <br />
             <div class="row">
                 <div class="col-lg-1">
                 </div>
-                <!-- Sidebar-->
-                <!-- end: Sidebar-->
                 <!-- post content -->
 
                 <div class="col-lg-8">
@@ -222,7 +280,7 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.Title)
                                 </th>
-                                <th>
+                                <th class="">
                                     @Html.DisplayNameFor(model => model.Rating)
                                 </th>
                             </tr>
@@ -235,6 +293,7 @@
                                         @Html.ActionLink(item.Title, "Details", new { id = item.Id })
                                     </td>
                                     <td>
+                                        <span class="glyphicon glyphicon-star"></span>
                                         @Html.DisplayFor(modelItem => item.Rating)
                                     </td>
                                 </tr>
@@ -256,45 +315,10 @@
                 <div class="sidebar col-lg-2 col-md-2 col-lg-offset-1 col-xs-12 col-sm-12">
 
                     <!--Tabs with Posts-->
-                    <div class="widget ">
-                        <h3 class="widget-title">Recommended Meal Plans</h3>
-                        <div class="post-thumbnail-list">
-                            <div class="post-thumbnail-entry">
-                                <a href="~/Fitness">
-                                    <img src="~/Pictures/mealplan1.png" style="width:150px;height:150px" />
-                                    <br />
-                                    <h5 class="post-thumbnail-content" style="text-align:center">
-                                        Fitness Collections
-                                    </h5>
-                                </a>
-                            </div>
-
-                            <div class="post-thumbnail-entry">
-                                <a href="~/ChildrenMP">
-                                    <img src="~/Pictures/mealplan2.png" style="width:150px;height:150px" />
-                                    <br />
-                                    <h5 class="post-thumbnail-content" style="text-align:center">
-                                        Desserts for Kids
-                                    </h5>
-                                </a>
-                            </div>
-
-                            <div class="post-thumbnail-entry">
-                                <a href="#">
-                                    <img src="~/Pictures/mealplan3.png" style="width:150px;height:150px" />
-                                    <br />
-                                    <h5 class="post-thumbnail-content" style="text-align:center">Summer Specials(coming soon....)</h5>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
                     <!--End: Tabs with Posts-->
 
                 </div>
-
             </div>
-
         </section>
         <!-- end: Content -->
         <!-- Footer -->
@@ -327,10 +351,9 @@
         <!-- end: Footer -->
 
     </div>
-    <!-- end: Body Inner -->
     
-
-
+    
+    <!-- end: Body Inner -->
     <script src="~/searchPageTemplate/js/jquery.js"></script>
     <script src="~/searchPageTemplate/js/functions.js"></script>
 
@@ -346,10 +369,6 @@
 
         });
 
-
-
     </script>
-
-
 
 </body>
